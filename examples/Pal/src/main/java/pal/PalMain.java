@@ -58,8 +58,12 @@ public final class PalMain {
                 String context = store.buildContext(input, 3);
                 String systemPrompt = PalPromptBuilder.buildSystemPrompt(context);
                 AI ai = FastAI.connect("ollama:llama3.2:1b");
-                String answer = ai.ask(systemPrompt, input);
-                System.out.println("\n" + answer);
+                System.out.println();
+                ai.stream(systemPrompt, input, token -> {
+                    System.out.print(token);
+                    System.out.flush();
+                });
+                System.out.println();
                 return;
             }
 
@@ -80,9 +84,12 @@ public final class PalMain {
                 String context = store.buildContext(input, 3);
                 String systemPrompt = PalPromptBuilder.buildSystemPrompt(context);
 
-                System.out.println("Pal > thinking...");
-                String answer = ai.ask(systemPrompt, input);
-                System.out.println("\n" + answer);
+                System.out.println("Pal > ");
+                ai.stream(systemPrompt, input, token -> {
+                    System.out.print(token);
+                    System.out.flush();
+                });
+                System.out.println();
             }
 
         } catch (Exception e) {
