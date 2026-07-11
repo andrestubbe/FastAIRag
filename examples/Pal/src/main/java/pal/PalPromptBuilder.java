@@ -1,4 +1,4 @@
-package candy;
+package pal;
 
 public final class PalPromptBuilder {
 

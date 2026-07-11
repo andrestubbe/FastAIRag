@@ -1,4 +1,4 @@
-package candy;
+package pal;
 
 import java.io.IOException;
 import java.nio.file.Files;
