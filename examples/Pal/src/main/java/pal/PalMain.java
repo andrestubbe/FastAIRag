@@ -56,6 +56,17 @@ public final class PalMain {
             }
             System.out.println("Loaded " + files.length + " snippet references.");
 
+            // Check if arguments are passed directly
+            if (args != null && args.length > 0) {
+                String input = String.join(" ", args);
+                String context = store.buildContext(input, 3);
+                String systemPrompt = PalPromptBuilder.buildSystemPrompt(context);
+                AI ai = FastAI.connect("ollama:llama3.2:1b");
+                String answer = ai.ask(systemPrompt, input);
+                System.out.println("\n" + answer);
+                return;
+            }
+
             // Connect to LLM
             System.out.println("Connecting to local LLM...");
             AI ai = FastAI.connect("ollama:llama3.2:1b"); // Default Ollama target

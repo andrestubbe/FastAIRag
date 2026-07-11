@@ -1,6 +1,4 @@
 @echo off
-echo [FastAIRag] Running Pal CLI Demo...
 cd examples/Pal
-call mvn -q compile exec:java
+call mvn -q compile exec:java -D"exec.args"="%*"
 cd ../..
-pause
