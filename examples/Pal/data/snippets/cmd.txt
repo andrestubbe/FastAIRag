@@ -1,0 +1,12 @@
+CMD: delete file
+del <file>
+del /f <file>       # force delete read-only files
+del /s <pattern>    # delete files recursively from subdirectories
+del /q <pattern>    # quiet mode, do not ask for confirmation
+
+CMD: rename file
+ren <old_name> <new_name>
+
+CMD: copy file
+copy <source> <destination>
+xcopy <source> <destination> /s /e /i   # copy directories recursively

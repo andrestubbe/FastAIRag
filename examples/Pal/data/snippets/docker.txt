@@ -1,0 +1,14 @@
+Docker: run container
+docker run -it --name <name> <image> <command>
+docker run -d -p <host_port>:<container_port> <image> # run detached
+
+Docker: container management
+docker ps         # list running
+docker ps -a      # list all
+docker stop <id>
+docker rm <id>
+
+Docker: image management
+docker images
+docker rmi <id>
+docker build -t <tag> <path_to_dockerfile>

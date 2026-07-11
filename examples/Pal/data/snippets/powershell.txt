@@ -1,0 +1,10 @@
+PowerShell: delete file
+Remove-Item <path>
+Remove-Item <path> -Force
+Remove-Item <path> -Recurse
+
+PowerShell: rename file
+Rename-Item -Path <old_path> -NewName <new_name>
+
+PowerShell: copy file
+Copy-Item -Path <source> -Destination <destination> -Recurse
