@@ -36,7 +36,7 @@ public final class PalIndexBuilder {
 
         try (RagStore store = FastAIRag.store(dummyEmbedder)) {
             Path snippetDir = Path.of("data/snippets");
-            String[] files = {"cmd.txt"};
+            String[] files = {"cmd.txt", "git.txt"};
             for (String file : files) {
                 Path path = snippetDir.resolve(file);
                 if (path.toFile().exists()) {
