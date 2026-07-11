@@ -43,9 +43,11 @@ public final class PalIndexBuilder {
                     System.out.println("Indexing: " + file);
                     List<String> snippets = SnippetLoader.loadSnippets(path);
                     for (int i = 0; i < snippets.size(); i++) {
+                        String text = snippets.get(i);
+                        System.out.println("  -> Chunk " + i + " (" + text.split("\n")[0] + ")");
                         store.add(new RagDocument(
                             file + "-" + i,
-                            snippets.get(i),
+                            text,
                             Map.of("source", file)
                         ));
                     }
