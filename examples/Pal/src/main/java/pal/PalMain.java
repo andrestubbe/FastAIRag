@@ -16,7 +16,10 @@ import java.util.Map;
 public final class PalMain {
 
     public static void main(String[] args) {
-        System.out.println("Initializing Pal (Local CLI Assistant)...");
+        boolean directMode = (args != null && args.length > 0);
+        if (!directMode) {
+            System.out.println("Initializing Pal (Local CLI Assistant)...");
+        }
 
         // Dummy embedding provider (maps words to simple normalized floats for demo purposes, 
         // fallback in case no local embedding model is running)
@@ -41,9 +44,11 @@ public final class PalMain {
             Path dbPath = Path.of("data/pal_index.db");
             if (dbPath.toFile().exists()) {
                 store.load(dbPath);
-                System.out.println("Loaded index database from: " + dbPath.toAbsolutePath());
+                if (!directMode) {
+                    System.out.println("Loaded index database from: " + dbPath.toAbsolutePath());
+                }
             } else {
-                System.out.println("Index database not found! Please build it first using build-index.bat.");
+                System.out.println("Index database not found! Please build it first using run-build.bat.");
                 return;
             }
 
