@@ -12,7 +12,14 @@ import java.util.Map;
 public final class PalIndexBuilder {
 
     public static void main(String[] args) {
-        System.out.println("Building Pal RAG Index...");
+        // Toggle ANSI/VT Mode in Windows console using FastTerminal native backend
+        try {
+            fastterminal.FastTerminal.setAnsiRawMode(true);
+        } catch (Throwable ignored) {}
+
+        System.out.println("\u001B[1;36m==================================================\u001B[0m");
+        System.out.println("\u001B[1;36m   Building Pal RAG Index (with FastTerminal)     \u001B[0m");
+        System.out.println("\u001B[1;36m==================================================\u001B[0m");
 
         EmbeddingProvider dummyEmbedder = text -> {
             float[] vec = new float[128];
@@ -42,15 +49,28 @@ public final class PalIndexBuilder {
                 if (path.toFile().exists()) {
                     System.out.println("Indexing: " + file);
                     List<String> snippets = SnippetLoader.loadSnippets(path);
-                    for (int i = 0; i < snippets.size(); i++) {
+                    int total = snippets.size();
+                    for (int i = 0; i < total; i++) {
                         String text = snippets.get(i);
-                        System.out.println("  -> Chunk " + i + " (" + text.split("\n")[0] + ")");
                         store.add(new RagDocument(
                             file + "-" + i,
                             text,
                             Map.of("source", file)
                         ));
+                        
+                        // Render progress bar
+                        int percent = (int) (((double) (i + 1) / total) * 100);
+                        int filled = percent / 4;
+                        StringBuilder sb = new StringBuilder("\r\u001B[0;35m[");
+                        for (int j = 0; j < 25; j++) {
+                            if (j < filled) sb.append("■");
+                            else sb.append(" ");
+                        }
+                        sb.append("] ").append(percent).append("% (Chunk ").append(i + 1).append("/").append(total).append(")\u001B[0m");
+                        System.out.print(sb.toString());
+                        try { Thread.sleep(20); } catch (InterruptedException ignored) {} // subtle progress feel
                     }
+                    System.out.println();
                 }
             }
             // Ensure data directory exists
@@ -59,9 +79,9 @@ public final class PalIndexBuilder {
                 parent.mkdirs();
             }
             store.save(dbPath);
-            System.out.println("Successfully generated index database!");
+            System.out.println("\n\u001B[1;32m[SUCCESS] Successfully generated index database!\u001B[0m");
         } catch (Exception e) {
-            System.err.println("Indexing failed: " + e.getMessage());
+            System.err.println("\n\u001B[1;31m[FAILED] Indexing failed: " + e.getMessage() + "\u001B[0m");
             e.printStackTrace();
         }
     }

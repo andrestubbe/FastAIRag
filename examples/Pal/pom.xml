@@ -38,11 +38,22 @@
             <groupId>com.github.andrestubbe</groupId>
             <artifactId>fastai</artifactId>
             <version>0.1.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../../../FastAI/target/fastai-0.1.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.github.andrestubbe</groupId>
+            <artifactId>FastTerminal</artifactId>
+            <version>0.1.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../../../FastTerminal/target/FastTerminal-0.1.3.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.github.andrestubbe</groupId>
             <artifactId>FastJSON</artifactId>
             <version>0.1.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../../../FastAI/target/classes</systemPath>
         </dependency>
     </dependencies>
     
