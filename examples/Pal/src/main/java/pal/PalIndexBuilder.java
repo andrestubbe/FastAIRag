@@ -61,12 +61,12 @@ public final class PalIndexBuilder {
                         // Render progress bar (monochrome & full block chars █)
                         int percent = (int) (((double) (i + 1) / total) * 100);
                         int filled = percent / 4;
-                        StringBuilder sb = new StringBuilder("\r[");
+                        StringBuilder sb = new StringBuilder("\r ");
                         for (int j = 0; j < 25; j++) {
                             if (j < filled) sb.append("█");
                             else sb.append(" ");
                         }
-                        sb.append("] ").append(percent).append("% (Chunk ").append(i + 1).append("/").append(total).append(")");
+                        sb.append("  ").append(percent).append("% (Chunk ").append(i + 1).append("/").append(total).append(")");
                         System.out.print(sb.toString());
                         try { Thread.sleep(20); } catch (InterruptedException ignored) {} // subtle progress feel
                     }
