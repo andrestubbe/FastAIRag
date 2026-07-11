@@ -57,7 +57,7 @@ public final class PalMain {
                 String input = String.join(" ", args);
                 String context = store.buildContext(input, 3);
                 String systemPrompt = PalPromptBuilder.buildSystemPrompt(context);
-                AI ai = FastAI.connect("ollama:llama3.2");
+                AI ai = FastAI.connect("ollama:llama3.2:3b");
                 System.out.println();
                 ai.stream(systemPrompt, input, token -> {
                     System.out.print(token);
@@ -69,7 +69,7 @@ public final class PalMain {
 
             // Connect to LLM
             System.out.println("Connecting to local LLM...");
-            AI ai = FastAI.connect("ollama:llama3.2"); // Default Ollama target
+            AI ai = FastAI.connect("ollama:llama3.2:3b"); // Default Ollama target
 
             System.out.println("\nPal is ready! Type your question (e.g. 'how to delete a directory') or 'exit' to quit.");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
