@@ -53,6 +53,12 @@ public final class PalIndexBuilder {
                     }
                 }
             }
+            // Ensure data directory exists
+            java.io.File parent = dbPath.toFile().getParentFile();
+            if (parent != null && !parent.exists()) {
+                parent.mkdirs();
+            }
+            store.save(dbPath);
             System.out.println("Successfully generated index database!");
         } catch (Exception e) {
             System.err.println("Indexing failed: " + e.getMessage());

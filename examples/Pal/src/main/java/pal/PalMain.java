@@ -38,23 +38,14 @@ public final class PalMain {
         };
 
         try (RagStore store = FastAIRag.store(dummyEmbedder)) {
-            // Load snippet docs
-            Path snippetDir = Path.of("data/snippets");
-            String[] files = {"cmd.txt", "git.txt"};
-            for (String file : files) {
-                Path path = snippetDir.resolve(file);
-                if (path.toFile().exists()) {
-                    List<String> snippets = SnippetLoader.loadSnippets(path);
-                    for (int i = 0; i < snippets.size(); i++) {
-                        store.add(new RagDocument(
-                            file + "-" + i,
-                            snippets.get(i),
-                            Map.of("source", file)
-                        ));
-                    }
-                }
+            Path dbPath = Path.of("data/pal_index.db");
+            if (dbPath.toFile().exists()) {
+                store.load(dbPath);
+                System.out.println("Loaded index database from: " + dbPath.toAbsolutePath());
+            } else {
+                System.out.println("Index database not found! Please build it first using build-index.bat.");
+                return;
             }
-            System.out.println("Loaded " + files.length + " snippet references.");
 
             // Check if arguments are passed directly
             if (args != null && args.length > 0) {
