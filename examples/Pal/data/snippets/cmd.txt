@@ -1,12 +1,225 @@
-CMD: delete file
-del <file>
-del /f <file>       # force delete read-only files
-del /s <pattern>    # delete files recursively from subdirectories
-del /q <pattern>    # quiet mode, do not ask for confirmation
+CMD: attrib command reference
+Displays or changes file attributes.
 
-CMD: rename file
-ren <old_name> <new_name>
+ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [+O | -O] [+I | -I] [+X | -X] [+P | -P] [+U | -U]
+       [drive:][path][filename] [/S [/D]] [/L]
 
-CMD: copy file
-copy <source> <destination>
-xcopy <source> <destination> /s /e /i   # copy directories recursively
+  +   Sets an attribute.
+  -   Clears an attribute.
+  R   Read-only file attribute.
+  A   Archive file attribute.
+  S   System file attribute.
+  H   Hidden file attribute.
+  O   Offline attribute.
+  I   Not content indexed file attribute.
+  X   No scrub file attribute.
+  V   Integrity attribute.
+
+
+CMD: copy command reference
+Copies one or more files to another location.
+
+COPY [/D] [/V] [/N] [/Y | /-Y] [/Z] [/L] [/A | /B ] source [/A | /B]
+     [+ source [/A | /B] [+ ...]] [destination [/A | /B]]
+
+  source       Specifies the file or files to be copied.
+  /A           Indicates an ASCII text file.
+  /B           Indicates a binary file.
+  /D           Allow the destination file to be created decrypted
+  destination  Specifies the directory and/or filename for the new file(s).
+  /V           Verifies that new files are written correctly.
+  /N           Uses short filename, if available, when copying a file with a
+               non-8dot3 name.
+  /Y           Suppresses prompting to confirm you want to overwrite an
+               existing destination file.
+
+
+CMD: xcopy command reference
+Copies files and directory trees.
+
+XCOPY source [destination] [/A | /M] [/D[:date]] [/P] [/S [/E]] [/V] [/W]
+                           [/C] [/I] [/-I] [/Q] [/F] [/L] [/G] [/H] [/R] [/T]
+                           [/U] [/K] [/N] [/O] [/X] [/Y] [/-Y] [/Z] [/B] [/J]
+                           [/EXCLUDE:file1[+file2][+file3]...] [/COMPRESS]
+                           [/[-]SPARSE] [/NOCLONE]
+
+  source       Specifies the file(s) to copy.
+  destination  Specifies the location and/or name of new files.
+  /A           Copies only files with the archive attribute set,
+               doesn't change the attribute.
+  /M           Copies only files with the archive attribute set,
+               turns off the archive attribute.
+  /D:m-d-y     Copies files changed on or after the specified date.
+
+
+CMD: robocopy command reference
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Saturday, 11 July 2026 03:33:35
+              Usage :: ROBOCOPY source destination [file [file]...] [options]
+
+             source :: Source Directory (drive:\path or \\server\share\path).
+        destination :: Destination Dir  (drive:\path or \\server\share\path).
+               file :: File(s) to copy  (names/wildcards: default is "*.*").
+
+::
+:: Copy options :
+::
+
+
+CMD: del command reference
+Deletes one or more files.
+
+DEL [/P] [/F] [/S] [/Q] [/A[[:]attributes]] names
+ERASE [/P] [/F] [/S] [/Q] [/A[[:]attributes]] names
+
+  names         Specifies a list of one or more files or directories.
+                Wildcards may be used to delete multiple files. If a
+                directory is specified, all files within the directory
+                will be deleted.
+
+  /P            Prompts for confirmation before deleting each file.
+  /F            Force deleting of read-only files.
+  /S            Delete specified files from all subdirectories.
+  /Q            Quiet mode, do not ask if ok to delete on global wildcard
+  /A            Selects files to delete based on attributes
+
+
+CMD: dir command reference
+Displays a list of files and subdirectories in a directory.
+
+DIR [drive:][path][filename] [/A[[:]attributes]] [/B] [/C] [/D] [/L] [/N]
+  [/O[[:]sortorder]] [/P] [/Q] [/R] [/S] [/T[[:]timefield]] [/W] [/X] [/4]
+
+  [drive:][path][filename]
+              Specifies drive, directory, and/or files to list.
+
+  /A          Displays files with specified attributes.
+  attributes   D  Directories                R  Read-only files
+               H  Hidden files               A  Files ready for archiving
+               S  System files               I  Not content indexed files
+               L  Reparse Points             O  Offline files
+               -  Prefix meaning not
+  /B          Uses bare format (no heading information or summary).
+
+
+CMD: findstr command reference
+Searches for strings in files.
+
+FINDSTR [/B] [/E] [/L] [/R] [/S] [/I] [/X] [/V] [/N] [/M] [/O] [/P] [/F:file]
+        [/C:string] [/G:file] [/D:dir list] [/A:color attributes] [/OFF[LINE]]
+        strings [[drive:][path]filename[ ...]]
+
+  /B         Matches pattern if at the beginning of a line.
+  /E         Matches pattern if at the end of a line.
+  /L         Uses search strings literally.
+  /R         Uses search strings as regular expressions.
+  /S         Searches for matching files in the current directory and all
+             subdirectories.
+  /I         Specifies that the search is not to be case-sensitive.
+  /X         Prints lines that match exactly.
+  /V         Prints only lines that do not contain a match.
+
+
+CMD: mkdir command reference
+Creates a directory.
+
+MKDIR [drive:]path
+MD [drive:]path
+
+If Command Extensions are enabled MKDIR changes as follows:
+
+MKDIR creates any intermediate directories in the path, if needed.
+For example, assume \a does not exist then:
+
+    mkdir \a\b\c\d
+
+is the same as:
+
+    mkdir \a
+
+
+CMD: move command reference
+Moves files and renames files and directories.
+
+To move one or more files:
+MOVE [/Y | /-Y] [drive:][path]filename1[,...] destination
+
+To rename a directory:
+MOVE [/Y | /-Y] [drive:][path]dirname1 dirname2
+
+  [drive:][path]filename1 Specifies the location and name of the file
+                          or files you want to move.
+  destination             Specifies the new location of the file. Destination
+                          can consist of a drive letter and colon, a
+                          directory name, or a combination. If you are moving
+                          only one file, you can also include a filename if
+                          you want to rename the file when you move it.
+
+
+CMD: rename command reference
+Renames a file or files.
+
+RENAME [drive:][path]filename1 filename2.
+REN [drive:][path]filename1 filename2.
+
+Note that you cannot specify a new drive or path for your destination file.
+
+
+CMD: replace command reference
+Replaces files.
+
+REPLACE [drive1:][path1]filename [drive2:][path2] [/A] [/P] [/R] [/W]
+REPLACE [drive1:][path1]filename [drive2:][path2] [/P] [/R] [/S] [/W] [/U]
+
+  [drive1:][path1]filename Specifies the source file or files.
+  [drive2:][path2]         Specifies the directory where files are to be
+                           replaced.
+  /A                       Adds new files to destination directory. Cannot
+                           use with /S or /U switches.
+  /P                       Prompts for confirmation before replacing a file or
+                           adding a source file.
+  /R                       Replaces read-only files as well as unprotected
+                           files.
+  /S                       Replaces files in all subdirectories of the
+
+
+CMD: taskkill command reference
+
+TASKKILL [/S system [/U username [/P [password]]]]
+         { [/FI filter] [/PID processid | /IM imagename] } [/T] [/F]
+
+Description:
+    This tool is used to terminate tasks by process id (PID) or image name.
+
+Parameter List:
+    /S    system           Specifies the remote system to connect to.
+
+    /U    [domain\]user    Specifies the user context under which the
+                           command should execute.
+
+    /P    [password]       Specifies the password for the given user
+                           context. Prompts for input if omitted.
+
+
+CMD: tasklist command reference
+
+TASKLIST [/S system [/U username [/P [password]]]]
+         [/M [module] | /SVC | /V] [/FI filter] [/FO format] [/NH]
+
+Description:
+    This tool displays a list of currently running processes on
+    either a local or remote machine.
+
+Parameter List:
+   /S     system           Specifies the remote system to connect to.
+
+   /U     [domain\]user    Specifies the user context under which
+                           the command should execute.
+
+   /P     [password]       Specifies the password for the given
+
+
