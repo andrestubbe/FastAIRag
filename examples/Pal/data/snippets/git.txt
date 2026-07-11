@@ -12,3 +12,19 @@ git push origin HEAD
 Git: checkout
 git checkout -b <new_branch>
 git checkout <branch_or_commit>
+
+Git: rebase
+git rebase <upstream_branch>
+git rebase --continue
+git rebase --abort
+
+Git: cherry-pick
+git cherry-pick <commit_hash>
+git cherry-pick --continue
+git cherry-pick --abort
+
+Git: stash
+git stash
+git stash pop
+git stash list
+git stash apply
