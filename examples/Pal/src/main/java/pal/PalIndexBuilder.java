@@ -17,9 +17,9 @@ public final class PalIndexBuilder {
             fastterminal.FastTerminal.setAnsiRawMode(true);
         } catch (Throwable ignored) {}
 
-        System.out.println("\u001B[1;36m==================================================\u001B[0m");
-        System.out.println("\u001B[1;36m   Building Pal RAG Index (with FastTerminal)     \u001B[0m");
-        System.out.println("\u001B[1;36m==================================================\u001B[0m");
+        System.out.println("==================================================");
+        System.out.println("   Building Pal RAG Index (with FastTerminal)     ");
+        System.out.println("==================================================");
 
         EmbeddingProvider dummyEmbedder = text -> {
             float[] vec = new float[128];
@@ -58,15 +58,15 @@ public final class PalIndexBuilder {
                             Map.of("source", file)
                         ));
                         
-                        // Render progress bar
+                        // Render progress bar (monochrome & full block chars █)
                         int percent = (int) (((double) (i + 1) / total) * 100);
                         int filled = percent / 4;
-                        StringBuilder sb = new StringBuilder("\r\u001B[0;35m[");
+                        StringBuilder sb = new StringBuilder("\r[");
                         for (int j = 0; j < 25; j++) {
-                            if (j < filled) sb.append("■");
+                            if (j < filled) sb.append("█");
                             else sb.append(" ");
                         }
-                        sb.append("] ").append(percent).append("% (Chunk ").append(i + 1).append("/").append(total).append(")\u001B[0m");
+                        sb.append("] ").append(percent).append("% (Chunk ").append(i + 1).append("/").append(total).append(")");
                         System.out.print(sb.toString());
                         try { Thread.sleep(20); } catch (InterruptedException ignored) {} // subtle progress feel
                     }
@@ -79,9 +79,9 @@ public final class PalIndexBuilder {
                 parent.mkdirs();
             }
             store.save(dbPath);
-            System.out.println("\n\u001B[1;32m[SUCCESS] Successfully generated index database!\u001B[0m");
+            System.out.println("\n[SUCCESS] Successfully generated index database!");
         } catch (Exception e) {
-            System.err.println("\n\u001B[1;31m[FAILED] Indexing failed: " + e.getMessage() + "\u001B[0m");
+            System.err.println("\n[FAILED] Indexing failed: " + e.getMessage());
             e.printStackTrace();
         }
     }
