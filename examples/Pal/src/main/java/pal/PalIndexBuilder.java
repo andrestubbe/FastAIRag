@@ -17,9 +17,7 @@ public final class PalIndexBuilder {
             fastterminal.FastTerminal.setAnsiRawMode(true);
         } catch (Throwable ignored) {}
 
-        System.out.println("==================================================");
-        System.out.println("   Building Pal RAG Index (with FastTerminal)     ");
-        System.out.println("==================================================");
+        System.out.println("Building Pal RAG Index");
 
         EmbeddingProvider dummyEmbedder = text -> {
             float[] vec = new float[128];
