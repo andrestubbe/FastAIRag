@@ -107,19 +107,19 @@ Segments normalized text streams into contextual passages with Parent-Child cont
 **[FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB) (The Vector Store)**  
 High-speed native C++ SIMD vector database storing small `chunk.text` embeddings for sub-5ms similarity retrieval.
 
-**[FastAIRag](https://github.com/andrestubbe/FastAIRag) (This Library — The Orchestration Pipeline)**  
+**FastAIRag (This Library — The Orchestration Pipeline)**  
 Higher-level RAG framework that orchestrates **[FastContentParse](https://github.com/andrestubbe/FastContentParse)** and **[FastContentChunk](https://github.com/andrestubbe/FastContentChunk)**, indexes small `chunk.text` embeddings into **[FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB)**, and feeds `chunk.parentText` to **[FastAIBot](https://github.com/andrestubbe/FastAIBot)** for LLM response generation.
 
 ---
 
 ## API Quick Reference
 
-| Method | Description |
-|--------|-------------|
-| `FastAIRag.store(EmbeddingProvider)` | Creates a new `RagStore` using the provided embedder. |
-| `store.addDirectory(Path, int, int)` | Recursively parses and indexes document directory with chunking. |
-| `FastAIRag.pipeline(AI, RagStore)` | Wraps LLM client and store into an end-to-end RAG pipeline. |
-| `pipeline.ask(String question)` | Searches context, constructs system prompt, and calls LLM. |
+| Method | Description | Path |
+|--------|-------------|------|
+| `FastAIRag.store(EmbeddingProvider)` | Creates a new `RagStore` using the provided embedder. | [Reference →](docs/REFERENCE.md#fastairag) |
+| `store.addDirectory(Path, int, int)` | Recursively parses and indexes document directory with chunking. | [Reference →](docs/REFERENCE.md#ragstore) |
+| `FastAIRag.pipeline(AI, RagStore)` | Wraps LLM client and store into an end-to-end RAG pipeline. | [Reference →](docs/REFERENCE.md#fastairag) |
+| `pipeline.ask(String)` | Searches context, constructs system prompt, and calls LLM. | [Reference →](docs/REFERENCE.md#ragpipeline) |
 
 ---
 
@@ -209,13 +209,13 @@ MIT License — See [LICENSE](LICENSE) file for details.
 
 ## Related Projects
 
-- [FastContentParse](https://github.com/andrestubbe/FastContentParse) — Java content parser for text extraction and normalization
-- [FastContentChunk](https://github.com/andrestubbe/FastContentChunk) — SIMD tokenizer and multi-mode strategy chunker
+- [FastContentParse](https://github.com/andrestubbe/FastContentParse) — Standardized Java document parser for text extraction and normalization
+- [FastContentChunk](https://github.com/andrestubbe/FastContentChunk) — High-performance native SIMD tokenizer and multi-mode strategy chunker
 - [FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB) — High-speed native C++ SIMD vector database
 - [FastCore](https://github.com/andrestubbe/FastCore) — Native JNI loader for FastJava libraries
+- [FastAI](https://github.com/andrestubbe/fastai) — Unified lightweight AI model client interface
+- [FastAIModel](https://github.com/andrestubbe/FastAIModel) — Embedded ONNX runtime for local feature embeddings
+- [FastAIBot](https://github.com/andrestubbe/FastAIBot) — Autonomous conversational AI bot engine
+- [FastAIAgent](https://github.com/andrestubbe/FastAIAgent) — Autonomous agentic workflow execution framework
 
----
-
-## Part of the FastJava Ecosystem
-
-*Making the JVM faster. Small package. Maximum speed. Zero bloat. 🚀📋*
+Part of the FastJava Ecosystem — Making the JVM faster. Small package. Maximum speed. Zero bloat. 🚀📋
