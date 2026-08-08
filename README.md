@@ -10,7 +10,7 @@
 
 **⚡ Connect local vector storage with generative AI models — Minimalist retrieval pipeline orchestrating chunking, embeddings, and context insertion.**
 
-FastAIRag is a **lightweight, framework-agnostic RAG engine** designed to feed relevant context into local or cloud models with zero framework bloat. It orchestrates file parsing, native Parent-Child chunking, embedding generation, index mapping, and query formatting, giving local models (like 1B-3B LLMs) domain knowledge without hallucinations.
+FastAIRag is a **lightweight, framework-agnostic RAG engine** designed to feed relevant context into local or cloud models with zero framework bloat. It is designed to work alongside **[FastContentParse](https://github.com/andrestubbe/FastContentParse)**, **[FastContentChunk](https://github.com/andrestubbe/FastContentChunk)**, and **[FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB)** to orchestrate text parsing, SIMD chunking, vector storage, and Parent-Child context retention.
 
 [![Showcase](docs/screenshot.png)](https://youtu.be/4dDMeUfrQ3w)
 
