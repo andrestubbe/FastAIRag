@@ -217,8 +217,10 @@ MIT License — See [LICENSE](LICENSE) file for details.
 - [FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB) — High-speed native C++ SIMD vector database
 - [FastCore](https://github.com/andrestubbe/FastCore) — Native JNI loader for FastJava libraries
 - [FastAI](https://github.com/andrestubbe/fastai) — Unified lightweight AI model client interface
-- [FastAIModel](https://github.com/andrestubbe/FastAIModel) — Embedded ONNX runtime for local feature embeddings
+- [FastAIModel](https://github.com/andrestubbe/FastAIModel) — Embedded GGUF and ONNX runtimes for local feature embeddings
 - [FastAIBot](https://github.com/andrestubbe/FastAIBot) — Autonomous conversational AI bot engine
 - [FastAIAgent](https://github.com/andrestubbe/FastAIAgent) — Autonomous agentic workflow execution framework
+
+---
 
 Part of the FastJava Ecosystem — Making the JVM faster. Small package. Maximum speed. Zero bloat. 🚀📋
