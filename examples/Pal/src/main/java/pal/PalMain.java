@@ -57,7 +57,7 @@ public final class PalMain {
                 String input = String.join(" ", args);
                 String context = store.buildContext(input, 3);
                 String systemPrompt = PalPromptBuilder.buildSystemPrompt(context);
-                AI ai = FastAI.connect("ollama:llama3.2:3b");
+                AI ai = FastAI.connect("ollama:qwen2.5:1.5b");
                 System.out.println();
                 ai.stream(systemPrompt, input, token -> {
                     System.out.print(token);
