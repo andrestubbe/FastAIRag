@@ -58,7 +58,8 @@ public final class RagStore implements AutoCloseable {
         sb.append("Context information:\n---\n");
         for (RagDocument hit : hits) {
             sb.append("Source: ").append(hit.metadata().getOrDefault("source", "Unknown")).append("\n");
-            sb.append(hit.text()).append("\n---\n");
+            String contextText = (hit.parentText() != null && !hit.parentText().isBlank()) ? hit.parentText() : hit.text();
+            sb.append(contextText).append("\n---\n");
         }
         return sb.toString();
     }

@@ -1,24 +1,27 @@
-# FastAIRag Reference Docs
+# FastAIRag Reference Manual
 
-## Classes
+## Core API
 
-### `EmbeddingProvider`
-Functional interface to map string queries into embeddings.
+### `FastAIRag`
+Factory entry point to instantiate RAG stores and orchestration pipelines.
+
 ```java
-@FunctionalInterface
-public interface EmbeddingProvider {
-    float[] embed(String text);
-}
+// 1. Create a RagStore with custom embedding provider
+RagStore store = FastAIRag.store(embeddingProvider);
+
+// 2. Index files or directories with parent-child chunking
+store.addDirectory(Path.of("./docs"), 512, 64);
+
+// 3. Attach LLM to execute RAG queries
+RagPipeline pipeline = FastAIRag.pipeline(llmClient, store);
+String answer = pipeline.ask("Your question here");
 ```
 
 ### `RagStore`
-Manages token parsing, directory chunking, embedding acquisition, and storage.
-```java
-public final class RagStore implements AutoCloseable {
-    public RagStore(EmbeddingProvider embeddingProvider);
-    public void add(RagDocument doc);
-    public void addDirectory(Path dir, int chunkSize, int overlap) throws IOException;
-    public List<RagDocument> search(String query, int topK);
-    public String buildContext(String query, int topK);
-}
-```
+Maintains document embeddings, chunk mappings, and Parent-Child context references.
+- `addDocument(String id, String text)`
+- `addDirectory(Path path, int maxTokens, int overlap)`
+- `search(String query, int topK)`
+
+### `RagPipeline`
+High-level prompt constructor injecting retrieved `chunk.text` or `chunk.parentText` passages into LLM prompts.
