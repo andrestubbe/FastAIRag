@@ -1,0 +1,31 @@
+TITLE:
+FastAIRag: Complete End-to-End High-Throughput Java RAG Pipeline ⚡
+
+DESCRIPTION:
+Showcasing the complete end-to-end Retrieval-Augmented Generation (RAG) pipeline demo in FastAIRag. Combining layout parsing (FastContentParse), native SIMD Parent-Child chunking (FastContentChunk), and native vector search (FastAIVectorDB), it delivers ultra-fast prompt context synthesis for LLMs.
+
+TECHNICAL HIGHLIGHTS:
+- 4-Phase RAG Pipeline: Ingestion -> Hierarchical Chunking -> SIMD Child Match -> Parent Context Synthesis.
+- Parent-Child Context Retention: Vector search matches precise child chunks while injecting full semantic parent paragraphs into the LLM prompt.
+- FastANSI CLI Styling: Systems headers rendered in subtle gray (`FG_BRIGHT_BLACK`) and retrieved chunk text in bright white (`FG_BRIGHT_WHITE`).
+- Microsecond Vector Retrieval: Sub-millisecond SIMD similarity search across indexed document stores.
+
+PIPELINE FLOW:
+1. FastContentParse: Layout-based PDF extraction & visual paragraph separation (\n\n).
+2. FastContentChunk: Multi-mode RECURSIVE chunking creating Parent-Child pairs.
+3. FastAIVectorDB: SIMD vector search returning top-1 relevant child chunk.
+4. FastAIRag: Context builder synthesizing full parent paragraph prompt for LLMs.
+
+FASTJAVA RAG PIPELINE REPOSITORIES:
+1. FastContentParse: https://github.com/andrestubbe/FastContentParse
+2. FastContentChunk: https://github.com/andrestubbe/FastContentChunk
+3. FastAIVectorDB: https://github.com/andrestubbe/FastAIVectorDB
+4. FastAIRag: https://github.com/andrestubbe/FastAIRag
+
+Ecosystem Overview: https://github.com/andrestubbe/FastJava
+
+Part of the FastJava Ecosystem — Making the JVM faster.
+Made with ⚡ by Andre Stubbe
+
+TAGS:
+Java, FastJava, RAG, FastAIRag, LLM Context, Vector Database, SIMD, AI Pipeline, Java RAG

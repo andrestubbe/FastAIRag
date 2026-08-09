@@ -1,0 +1,27 @@
+TITLE:
+FastAIRag: JMH Benchmark - End-to-End Microsecond RAG Pipeline ⚡
+
+DESCRIPTION:
+Official OpenJDK JMH (Java Microbenchmark Harness) performance benchmark for FastAIRag. Measuring total end-to-end latency across layout ingestion, SIMD chunking, vector match, and LLM parent context prompt synthesis.
+
+BENCHMARK RESULTS (JMH):
+- Full Document Ingestion: 5-10 ms (Visual Paragraph Parse)
+- SIMD Child Match & Parent Retrieval: < 500 µs
+- End-to-End Context Builder: Sub-millisecond prompt injection
+
+RUN BENCHMARK LOCALLY:
+Execute `run-benchmark.bat` in the repository root.
+
+FASTJAVA RAG PIPELINE REPOSITORIES:
+1. FastContentParse: https://github.com/andrestubbe/FastContentParse
+2. FastContentChunk: https://github.com/andrestubbe/FastContentChunk
+3. FastAIVectorDB: https://github.com/andrestubbe/FastAIVectorDB
+4. FastAIRag: https://github.com/andrestubbe/FastAIRag
+
+Ecosystem Overview: https://github.com/andrestubbe/FastJava
+
+Part of the FastJava Ecosystem — Making the JVM faster.
+Made with ⚡ by Andre Stubbe
+
+TAGS:
+Java, FastJava, JMH, Benchmark, FastAIRag, RAG Pipeline, Vector Search, LLM Context, Performance, Software Engineering
