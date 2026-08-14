@@ -145,7 +145,7 @@ Add the JitPack repository and the dependency to your `pom.xml`:
     <dependency>
         <groupId>com.github.andrestubbe</groupId>
         <artifactId>FastAIVectorDB</artifactId>
-        <version>0.1.0</version>
+            <version>0.1.4</version>
     </dependency>
     <!-- Required for native library loading -->
     <dependency>
@@ -165,7 +165,7 @@ repositories {
 
 dependencies {
     implementation 'com.github.andrestubbe:FastAIRag:0.1.1'
-    implementation 'com.github.andrestubbe:FastAIVectorDB:0.1.1'
+    implementation 'com.github.andrestubbe:FastAIVectorDB:0.1.4'
     // Required for native library loading
     implementation 'com.github.andrestubbe:FastCore:0.1.0'
 }
@@ -176,7 +176,7 @@ dependencies {
 Download the latest JARs directly to add them to your classpath:
 
 1. 💡 **[FastAIRag-0.1.1.jar](https://github.com/andrestubbe/FastAIRag/releases/download/0.1.1/FastAIRag-0.1.1.jar)** (RAG Engine)
-2. ⚡ **[FastAIVectorDB-0.1.1.jar](https://github.com/andrestubbe/FastAIVectorDB/releases/download/0.1.1/FastAIVectorDB-0.1.1.jar)** (The Vector Store)
+2. ⚡ **[FastAIVectorDB-0.1.4.jar](https://github.com/andrestubbe/FastAIVectorDB/releases/download/0.1.4/FastAIVectorDB-0.1.4.jar)** (The Vector Store)
 3. ⚙️ **[fastcore-0.1.0.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.0/fastcore-0.1.0.jar)** (Required Native JNI Loader)
 
 > [!IMPORTANT]
