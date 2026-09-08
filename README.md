@@ -12,6 +12,8 @@
 
 FastAIRag is a **lightweight, framework-agnostic RAG engine** designed to feed relevant context into local or cloud models with zero framework bloat. It is designed to work alongside **[FastContentParse](https://github.com/andrestubbe/FastContentParse)**, **[FastContentChunk](https://github.com/andrestubbe/FastContentChunk)**, and **[FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB)** to orchestrate text parsing, SIMD chunking, vector storage, and Parent-Child context retention.
 
+[**Watch Demo (YouTube)**](https://youtu.be/LJr51O8sBjA) | [Watch JMH Benchmark (Youtube)]
+
 [![Showcase](docs/screenshot.png)](https://youtu.be/LJr51O8sBjA)
 
 ---
