@@ -1,0 +1,6 @@
+fastairag\RagStore.class
+fastairag\EmbeddingProvider.class
+fastairag\RagDocument.class
+fastairag\RagPipeline.class
+fastairag\FastAIRag.class
+fastairag\Chunker.class

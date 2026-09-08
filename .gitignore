@@ -1,13 +1,2 @@
-# IDE files
-.vscode/
-.idea/
-*.iml
-
-# OS files
-Thumbs.db
-.DS_Store
-
-# Build artifacts
-**/target/
-**/build/
-**/out/
+# Private notes ? not committed to GitHub
+Todo.md
