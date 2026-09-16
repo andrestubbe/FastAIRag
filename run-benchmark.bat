@@ -2,16 +2,16 @@
 chcp 65001 >nul
 cls
 
-echo ⚡ Building Main Project...
+echo [1/3] Building FastAIRag...
 call mvn clean install -DskipTests -q
-if %ERRORLEVEL% NEQ 0 ( echo ❌ Main build failed. & pause & exit /b %ERRORLEVEL% )
+if %ERRORLEVEL% NEQ 0 ( echo [ERROR] Build failed! & pause & exit /b %ERRORLEVEL% )
 
-echo 🛠  Building Benchmark Uber-JAR...
+echo [2/3] Building Benchmark Uber-JAR...
 cd examples\Benchmark
 call mvn clean package -DskipTests -q
-if %ERRORLEVEL% NEQ 0 ( echo ❌ Benchmark build failed. & pause & exit /b %ERRORLEVEL% )
+if %ERRORLEVEL% NEQ 0 ( echo [ERROR] Benchmark build failed! & pause & exit /b %ERRORLEVEL% )
 
-echo 🚀 Running JMH Benchmarks...
+echo [3/3] Running JMH Benchmarks...
 java -jar target\benchmarks.jar
 
 cd ..\..

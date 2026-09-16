@@ -2,23 +2,16 @@
 chcp 65001 >nul
 cd /d "%~dp0"
 
-echo Building FastAIRag module...
-call mvn -q install -DskipTests
-if errorlevel 1 (
-    echo Failed to build FastAIRag module.
-    pause
-    exit /b 1
-)
+echo [1/3] Building FastAIRag...
+call mvn clean install -DskipTests -q
+if %ERRORLEVEL% NEQ 0 ( echo [ERROR] Build failed! & pause & exit /b %ERRORLEVEL% )
 
-echo Running FastAIRag Demo...
+echo [2/3] Compiling Demo...
 cd examples\Demo
-call mvn -q clean compile
-if errorlevel 1 (
-    echo Demo compilation failed.
-    pause
-    exit /b 1
-)
+call mvn clean compile -q
+if %ERRORLEVEL% NEQ 0 ( echo [ERROR] Demo compilation failed! & pause & exit /b %ERRORLEVEL% )
 
-call mvn -q exec:java "-Dexec.mainClass=demo.Demo" %*
+echo [3/3] Running Demo...
+call mvn exec:java "-Dexec.mainClass=demo.Demo" -q %*
 cd ..\..
 pause
