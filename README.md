@@ -105,10 +105,10 @@ FastAIRag resolves these friction points by providing a lean, in-process JVM orc
 
 ## Architecture Overview
 
-- 📄 **FastContentParse (The Parser)**: Converts unstructured binary documents (PDF, RTF, Markdown, TXT) into normalized UTF-8 text streams.
-- 🧩 **FastContentChunk (The Strategy Engine)**: Segments normalized text streams into contextual passages with Parent-Child context.
-- ⚡ **FastAIVectorDB (The Vector Store)**: High-speed native C++ SIMD vector database storing small child chunk embeddings for sub-millisecond retrieval.
-- 🚀 **FastAIRag (The Orchestration Pipeline)**: Higher-level RAG framework coordinating parsing, chunking, vector indexing, and feeding parent context directly to **FastAIBot** or **FastAI** LLM models.
+- 📄 **[FastContentParse](https://github.com/andrestubbe/FastContentParse)** (The Parser): Converts unstructured binary documents (PDF, RTF, Markdown, TXT) into normalized UTF-8 text streams.
+- 🧩 **[FastContentChunk](https://github.com/andrestubbe/FastContentChunk)** (The Strategy Engine): Segments normalized text streams into contextual passages with Parent-Child context.
+- ⚡ **[FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB)** (The Vector Store): High-speed native C++ SIMD vector database storing small child chunk embeddings for sub-millisecond retrieval.
+- 🚀 **FastAIRag** (The Orchestration Pipeline): Higher-level RAG framework coordinating parsing, chunking, vector indexing, and feeding parent context directly to **[FastAIBot](https://github.com/andrestubbe/FastAIBot)** or **[FastAI](https://github.com/andrestubbe/FastAI)** LLM models.
 
 ---
 
