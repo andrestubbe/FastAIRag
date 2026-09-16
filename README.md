@@ -95,20 +95,20 @@ FastAIRag resolves these friction points by providing a lean, in-process JVM orc
 
 ## Key Features
 
-- **Ingestion & Parsing**: Ingests document directories, extracting clean text streams via **FastContentParse** and segmenting with **FastContentChunk**.
-- **Parent-Child Context Retention**: Matches small vector embeddings with large narrative sections to retain surrounding context and eliminate hallucinations.
-- **Direct Memory Vector Search**: Native SIMD-accelerated similarity search powered directly by **FastAIVectorDB**.
-- **Model & Vendor Agnostic**: Single-method `EmbeddingProvider` interface supports local models (ONNX, Ollama) and cloud APIs.
-- **Zero-Allocation Data Flow**: High-throughput prompt construction designed for low-latency interactive assistant pipelines.
+- 📂 **Ingestion & Parsing**: Ingests document directories, extracting clean text streams via **FastContentParse** and segmenting with **FastContentChunk**.
+- 🧠 **Parent-Child Context Retention**: Matches small vector embeddings with large narrative sections to retain surrounding context and eliminate hallucinations.
+- ⚡ **Direct Memory Vector Search**: Native SIMD-accelerated similarity search powered directly by **FastAIVectorDB**.
+- 🔌 **Model & Vendor Agnostic**: Single-method `EmbeddingProvider` interface supports local models (ONNX, Ollama) and cloud APIs.
+- 🚀 **Zero-Allocation Data Flow**: High-throughput prompt construction designed for low-latency interactive assistant pipelines.
 
 ---
 
 ## Architecture Overview
 
-- **FastContentParse (The Parser)**: Converts unstructured binary documents (PDF, RTF, Markdown, TXT) into normalized UTF-8 text streams.
-- **FastContentChunk (The Strategy Engine)**: Segments normalized text streams into contextual passages with Parent-Child context.
-- **FastAIVectorDB (The Vector Store)**: High-speed native C++ SIMD vector database storing small child chunk embeddings for sub-millisecond retrieval.
-- **FastAIRag (The Orchestration Pipeline)**: Higher-level RAG framework coordinating parsing, chunking, vector indexing, and feeding parent context directly to **FastAIBot** or **FastAI** LLM models.
+- 📄 **FastContentParse (The Parser)**: Converts unstructured binary documents (PDF, RTF, Markdown, TXT) into normalized UTF-8 text streams.
+- 🧩 **FastContentChunk (The Strategy Engine)**: Segments normalized text streams into contextual passages with Parent-Child context.
+- ⚡ **FastAIVectorDB (The Vector Store)**: High-speed native C++ SIMD vector database storing small child chunk embeddings for sub-millisecond retrieval.
+- 🚀 **FastAIRag (The Orchestration Pipeline)**: Higher-level RAG framework coordinating parsing, chunking, vector indexing, and feeding parent context directly to **FastAIBot** or **FastAI** LLM models.
 
 ---
 
