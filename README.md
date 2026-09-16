@@ -166,16 +166,31 @@ Add the JitPack repository and the dependency to your `pom.xml`:
 </repositories>
 
 <dependencies>
+    <!-- Unified RAG Engine -->
     <dependency>
         <groupId>com.github.andrestubbe</groupId>
         <artifactId>FastAIRag</artifactId>
         <version>0.1.1</version>
     </dependency>
+    <!-- High-Throughput SIMD Vector Database -->
     <dependency>
         <groupId>com.github.andrestubbe</groupId>
         <artifactId>FastAIVectorDB</artifactId>
         <version>0.1.4</version>
     </dependency>
+    <!-- Document Parser (PDF, DOC, RTF, Markdown) -->
+    <dependency>
+        <groupId>com.github.andrestubbe</groupId>
+        <artifactId>FastContentParse</artifactId>
+        <version>0.1.5</version>
+    </dependency>
+    <!-- Hierarchical Parent-Child Chunking Engine -->
+    <dependency>
+        <groupId>com.github.andrestubbe</groupId>
+        <artifactId>FastContentChunk</artifactId>
+        <version>0.1.3</version>
+    </dependency>
+    <!-- Native JNI Loader -->
     <dependency>
         <groupId>com.github.andrestubbe</groupId>
         <artifactId>FastCore</artifactId>
@@ -194,6 +209,8 @@ repositories {
 dependencies {
     implementation 'com.github.andrestubbe:FastAIRag:0.1.1'
     implementation 'com.github.andrestubbe:FastAIVectorDB:0.1.4'
+    implementation 'com.github.andrestubbe:FastContentParse:0.1.5'
+    implementation 'com.github.andrestubbe:FastContentChunk:0.1.3'
     implementation 'com.github.andrestubbe:FastCore:0.1.1'
 }
 ```
@@ -204,6 +221,8 @@ Download pre-compiled release JARs directly from [GitHub Releases](https://githu
 
 * 💡 **[FastAIRag-0.1.1.jar](https://github.com/andrestubbe/FastAIRag/releases/download/0.1.1/FastAIRag-0.1.1.jar)** (RAG Engine)
 * ⚡ **[FastAIVectorDB-0.1.4.jar](https://github.com/andrestubbe/FastAIVectorDB/releases/download/0.1.4/FastAIVectorDB-0.1.4.jar)** (Vector Store)
+* 📄 **[FastContentParse-0.1.5.jar](https://github.com/andrestubbe/FastContentParse/releases/download/0.1.5/FastContentParse-0.1.5.jar)** (Document Parser)
+* 🧩 **[FastContentChunk-0.1.3.jar](https://github.com/andrestubbe/FastContentChunk/releases/download/0.1.3/FastContentChunk-0.1.3.jar)** (Chunking Engine)
 * ⚙️ **[FastCore-0.1.1.jar](https://github.com/andrestubbe/FastCore/releases/download/0.1.1/FastCore-0.1.1.jar)** (Native JNI Loader)
 
 > [!IMPORTANT]
