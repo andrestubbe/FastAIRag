@@ -234,28 +234,28 @@ Download pre-compiled release JARs directly from [GitHub Releases](https://githu
 
 ## Related Projects
 
-- **[`FastAI`](https://github.com/andrestubbe/FastAI)**: Unified AI client interface for Java
-- **[`FastAIAgent`](https://github.com/andrestubbe/FastAIAgent)**: Autonomous agent loop, intent-graphs, and tool execution
-- **[`FastAIBot`](https://github.com/andrestubbe/FastAIBot)**: Zero-bloat bot harnesses and persona runtime
-- **[`FastAIEval`](https://github.com/andrestubbe/FastAIEval)**: Evaluation metrics and automated testing for LLM responses
-- **[`FastAIGraph`](https://github.com/andrestubbe/FastAIGraph)**: In-memory knowledge graph and multi-hop relationship engine
-- **[`FastAIGuard`](https://github.com/andrestubbe/FastAIGuard)**: Real-time LLM input/output guardrails and safety filtering
-- **[`FastAIHybrid`](https://github.com/andrestubbe/FastAIHybrid)**: Dense-sparse hybrid search fusion (BM25 + Vectors)
-- **[`FastAIMatcher`](https://github.com/andrestubbe/FastAIMatcher)**: Automated compliance and hybrid rule matching engine
-- **[`FastAIMCP`](https://github.com/andrestubbe/FastAIMCP)**: Model Context Protocol (MCP) server and tool integration
-- **[`FastAIMemory`](https://github.com/andrestubbe/FastAIMemory)**: Conversation history, sliding windows, and rolling summaries
-- **[`FastAIMemoryGraph`](https://github.com/andrestubbe/FastAIMemoryGraph)**: In-memory graph-based cognitive memory
-- **[`FastAIMetrics`](https://github.com/andrestubbe/FastAIMetrics)**: Token, latency, and cost tracking engine
-- **[`FastAIModel`](https://github.com/andrestubbe/FastAIModel)**: Native local inference runtime (GGUF, ONNX, and layer streaming)
-- **[`FastAIReasoner`](https://github.com/andrestubbe/FastAIReasoner)**: Deterministic planning, chain-of-thought, and self-correction
-- **[`FastAIRerank`](https://github.com/andrestubbe/FastAIRerank)**: Cross-encoder relevance filtering and Top-N prompt pruner
-- **[`FastAIRuntime`](https://github.com/andrestubbe/FastAIRuntime)**: Sandboxed process runner and tool-calling execution pipeline
-- **[`FastAISandbox`](https://github.com/andrestubbe/FastAISandbox)**: Secure multi-language sandbox environment
-- **[`FastAISkill`](https://github.com/andrestubbe/FastAISkill)**: Dynamic tool acquisition and semantic skill execution
-- **[`FastAIState`](https://github.com/andrestubbe/FastAIState)**: Lock-free shared agent state and blackboard memory
-- **[`FastAIVectorDB`](https://github.com/andrestubbe/FastAIVectorDB)**: High-throughput SIMD/AVX2 vector database
-- **[`FastAIVision`](https://github.com/andrestubbe/FastAIVision)**: High-speed local multimodal vision and screen-VLM engine
-- **[`FastCore`](https://github.com/andrestubbe/FastCore)**: Unified JNI loader and platform abstraction
+- [FastAI](https://github.com/andrestubbe/FastAI) — Unified AI client interface for Java
+- [FastAIAgent](https://github.com/andrestubbe/FastAIAgent) — Autonomous agent loop, intent-graphs, and tool execution
+- [FastAIBot](https://github.com/andrestubbe/FastAIBot) — Zero-bloat bot harnesses and persona runtime
+- [FastAIEval](https://github.com/andrestubbe/FastAIEval) — Evaluation metrics and automated testing for LLM responses
+- [FastAIGraph](https://github.com/andrestubbe/FastAIGraph) — In-memory knowledge graph and multi-hop relationship engine
+- [FastAIGuard](https://github.com/andrestubbe/FastAIGuard) — Real-time LLM input/output guardrails and safety filtering
+- [FastAIHybrid](https://github.com/andrestubbe/FastAIHybrid) — Dense-sparse hybrid search fusion (BM25 + Vectors)
+- [FastAIMatcher](https://github.com/andrestubbe/FastAIMatcher) — Automated compliance and hybrid rule matching engine
+- [FastAIMCP](https://github.com/andrestubbe/FastAIMCP) — Model Context Protocol (MCP) server and tool integration
+- [FastAIMemory](https://github.com/andrestubbe/FastAIMemory) — Conversation history, sliding windows, and rolling summaries
+- [FastAIMemoryGraph](https://github.com/andrestubbe/FastAIMemoryGraph) — In-memory graph-based cognitive memory
+- [FastAIMetrics](https://github.com/andrestubbe/FastAIMetrics) — Token, latency, and cost tracking engine
+- [FastAIModel](https://github.com/andrestubbe/FastAIModel) — Native local inference runtime (GGUF, ONNX, and layer streaming)
+- [FastAIReasoner](https://github.com/andrestubbe/FastAIReasoner) — Deterministic planning, chain-of-thought, and self-correction
+- [FastAIRerank](https://github.com/andrestubbe/FastAIRerank) — Cross-encoder relevance filtering and Top-N prompt pruner
+- [FastAIRuntime](https://github.com/andrestubbe/FastAIRuntime) — Sandboxed process runner and tool-calling execution pipeline
+- [FastAISandbox](https://github.com/andrestubbe/FastAISandbox) — Secure multi-language sandbox environment
+- [FastAISkill](https://github.com/andrestubbe/FastAISkill) — Dynamic tool acquisition and semantic skill execution
+- [FastAIState](https://github.com/andrestubbe/FastAIState) — Lock-free shared agent state and blackboard memory
+- [FastAIVectorDB](https://github.com/andrestubbe/FastAIVectorDB) — High-throughput SIMD/AVX2 vector database
+- [FastAIVision](https://github.com/andrestubbe/FastAIVision) — High-speed local multimodal vision and screen-VLM engine
+- [FastCore](https://github.com/andrestubbe/FastCore) — Unified JNI loader and platform abstraction
 
 ---
 
